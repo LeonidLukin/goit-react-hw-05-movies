@@ -4,6 +4,7 @@ import getSearchMovies from 'API/get-search-movies';
 import SearchBar from 'components/SearchBar';
 import Container from 'components/Container';
 import MoviesList from 'components/MoviesList';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 function MoviesPage() {
   const { search } = useLocation();
@@ -12,9 +13,20 @@ function MoviesPage() {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    if (query !== '') {
+    if (query) {
       getSearchMovies(query).then(({ results }) => {
         const moviesArr = [];
+
+        if (!results.length) {
+          return Notify.warning(`We could not found ${query} movie`, {
+            backOverlay: true,
+            timeout: 1000,
+            position: 'center-center',
+            fontSize: '34px',
+            width: '500px',
+            clickToClose: true,
+          });
+        }
 
         results.map(
           ({ id, original_title, poster_path, vote_average, vote_count }) => {
