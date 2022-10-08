@@ -1,15 +1,11 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { useParams, Routes, Route } from 'react-router-dom';
-import getMovieDetails from 'API/get-movie-details';
+import { getMovieDetails } from 'API/themoviedb-service';
 import MovieDetails from 'components/MovieDetails';
 import Loader from 'components/Loader';
 
-const Cast = lazy(() =>
-  import('./Cast.js' /* webpackChunkName: "cast-view" */),
-);
-const Reviews = lazy(() =>
-  import('./Reviews.js' /* webpackChunkName: "review-view" */),
-);
+const Cast = lazy(() => import('../components/Cast/Cast'));
+const Reviews = lazy(() => import('../components/Reviews/Reviews'));
 
 function MovieDetailsPage() {
   const { movieId } = useParams();

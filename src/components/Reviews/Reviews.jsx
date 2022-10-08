@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import getMovieReviews from 'API/get-movie-reviews';
+import { getMovieReviews } from 'API/themoviedb-service';
 import ReviewsList from 'components/ReviewsList';
 import Container from 'components/Container';
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getTrending from 'API/get-trending';
+import { getTrending } from 'API/themoviedb-service';
 import Container from 'components/Container';
 import MoviesList from 'components/MoviesList';
 

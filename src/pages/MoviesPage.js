@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import getSearchMovies from 'API/get-search-movies';
+import { getSearchMovies } from 'API/themoviedb-service';
 import SearchBar from 'components/SearchBar';
 import Container from 'components/Container';
 import MoviesList from 'components/MoviesList';

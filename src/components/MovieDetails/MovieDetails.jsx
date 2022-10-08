@@ -97,7 +97,7 @@ export default function MovieDetails({ movieInfo }) {
   );
 }
 
-MovieDetails.prototype = {
+MovieDetails.propTypes = {
   movieInfo: propTypes.shape({
     title: propTypes.string,
     genres: propTypes.arrayOf(

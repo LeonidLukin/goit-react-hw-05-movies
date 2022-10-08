@@ -27,7 +27,7 @@ function ActorsList({ actors }) {
   );
 }
 
-ActorsList.prototype = {
+ActorsList.propTypes = {
   actors: propTypes.arrayOf(
     propTypes.shape({
       id: propTypes.number,

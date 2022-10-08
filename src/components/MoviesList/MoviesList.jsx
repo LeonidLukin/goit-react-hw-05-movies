@@ -21,7 +21,7 @@ export default function MoviesList({ movies }) {
   );
 }
 
-MoviesList.prototype = {
+MoviesList.propTypes = {
   movies: propTypes.arrayOf(
     propTypes.shape({
       id: propTypes.number,

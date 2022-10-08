@@ -41,7 +41,7 @@ export default function MovieCard({
   );
 }
 
-MovieCard.prototype = {
+MovieCard.propTypes = {
   id: propTypes.number,
   title: propTypes.string,
   poster: propTypes.string,

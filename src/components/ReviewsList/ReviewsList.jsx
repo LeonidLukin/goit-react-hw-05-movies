@@ -19,7 +19,7 @@ export default function ReviewsList({ reviews }) {
   );
 }
 
-ReviewsList.prototype = {
+ReviewsList.propTypes = {
   reviews: propTypes.arrayOf(
     propTypes.shape({
       id: propTypes.string,

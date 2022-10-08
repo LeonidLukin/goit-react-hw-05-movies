@@ -5,7 +5,7 @@ export default function Container({ children, isPadding }) {
   return <ContainerWrapper isPadding={isPadding}>{children}</ContainerWrapper>;
 }
 
-Container.prototype = {
-  children: propTypes.element,
+Container.propTypes = {
+  children: propTypes.node,
   isPadding: propTypes.bool,
 };
